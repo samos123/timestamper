@@ -1,6 +1,6 @@
 FROM python:3.7
 
-ENV FLASK_APP=timestamper.py
+ENV FLASK_APP=timestamper.py PYTHONUNBUFFERED=TRUE
 WORKDIR /app
 ADD . /app/
 RUN pip install -r requirements.txt
