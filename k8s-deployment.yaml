@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timestamper-deployment
+  labels:
+    app: timestamper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timestamper
+  template:
+    metadata:
+      labels:
+        app: timestamper
+    spec:
+      containers:
+      - name: timestamper
+        image: samos123/timestamper:latest
+        ports:
+        - containerPort: 8000
