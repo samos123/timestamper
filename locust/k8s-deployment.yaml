@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timestamper-locust
+  labels:
+    app: timestamper-locust
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: timestamper-locust
+  template:
+    metadata:
+      labels:
+        app: timestamper-locust
+    spec:
+      containers:
+      - name: timestamper-locust
+        image: gcr.io/gsam-123/timestamper-locust:latest
